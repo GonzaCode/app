@@ -1,0 +1,7 @@
+//COMPONENTES  
+//1) siempre son funciones
+//2) siempre retornan algo
+//3) siempre empiezan con Mayusuculas, si empieza con min babel lo traduce y crea como si fuese una etiqueta
+//4) siempre retorna un solo elemento
+
+//para poner clases no se usa class="" sino className=""
