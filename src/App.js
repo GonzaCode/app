@@ -1,10 +1,12 @@
-import Header from "./Header.js"
-import Footer from "./Footer.js"
+import Header from "./components/Header.js"
+import Footer from "./components/Footer.js"
+import Main from "./components/Main.js"
 
 const App = () => {
     return (
         <>
             <Header/>
+            <Main/>
             <Footer/>
         </>
     )

@@ -1,7 +1,28 @@
-//COMPONENTES  
-//1) siempre son funciones
-//2) siempre retornan algo
-//3) siempre empiezan con Mayusuculas, si empieza con min babel lo traduce y crea como si fuese una etiqueta
-//4) siempre retorna un solo elemento
+COMPONENTES  
+1) siempre son funciones
+2) siempre retornan algo
+3) siempre empiezan con Mayusuculas, si empieza con min babel lo traduce y crea como si fuese una etiqueta
+4) siempre retorna un solo elemento
 
-//para poner clases no se usa class="" sino className=""
+para poner clases no se usa class="" sino className=""
+
+CD APP
+CREAR REPOSITORIO CON GIT
+1) inciar nuestro repositorio / git init
+2) configurar nuestro repositorio
+    git config --global user.name "GonzaCoder"
+    git config --global user.email "gonzalo19_10@hotmail.com"
+    git config --global user.password "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" (token de github)
+
+SINCRONIZAR AL REMOTO/CLIENTE
+    git remote add origin https://github.com/GonzaCode/app.git
+    
+        REPETIR PARA SUBIR UN COMMIT
+ADD) git add . (para agregar los archivos faltantes al repo)
+COMMIT) git commit -m "Comentario en imperativo. ej: hice esto, cambie aquello, falta esto"
+PUSH) git push -u origin master
+
+tip: 
+    usar  git status
+si vas a usar un push y el commit anterior lo subiste manualmente por la web seguro debas usar
+un pull y asi te va a dejar usar el push
