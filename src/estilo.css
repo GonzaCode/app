@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    font-size: 1.08rem;
+}
+
+.header_layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: yellow;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header_layout nav a {
+    margin-left: 1rem;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1rem 5rem;
+}
+
+footer {
+    padding: 0.5rem;
+    background-color: yellow;
+}
+footer p {
+    text-align: center;
+    font-size: 0.8rem;
+}

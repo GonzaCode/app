@@ -1,7 +1,8 @@
 const Footer = () => {
   return (
-    <footer>
-        <h2>Footer</h2>
+    <footer className="footer_layout">
+        <p>Copyright 2022 - Gonzalo M.</p>
+        <p>Todos los derechos reservados.</p>
     </footer>
   )
 }
