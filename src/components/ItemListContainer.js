@@ -1,7 +1,9 @@
-const ItemListContainer = ({nombre}) => {
+import ItemList from "./ItemList"
+
+const ItemListContainer = () => {
    return (
       <>
-         <h2>¡Bienvenido {nombre}!</h2>
+         <ItemList/>
       </>
    )
 }
