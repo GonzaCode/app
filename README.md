@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Este proyecto simula el funcionamiento de una página e-commerce.
+Hecho con React.JS (empleando las librerias React Router DOM, Toastify. Tambien la API Fakestore para traer los productos a vender.), CSS (clases segun metodologia BEM).

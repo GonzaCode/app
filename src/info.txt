@@ -10,7 +10,11 @@ COMPONENTES
    - Mounting : Cuando el componente se monta en el DOM
    - Updating : Cuando el componente se actualiza
    - Unmounting : Cuando el componente se desmonta del DOM
-
+9) Los componentes vuelven a renderizar su contenido cuando:
+   - Se actualiza el estado
+   - Se recibe un nuevo propiedad
+   - Su padre se renderiza de nuevo
+   - Cuando cambia el contexto
 
 para poner clases no se usa class="" sino className=""
 
@@ -97,7 +101,8 @@ HOOKS (Ganchos) : Son funciones que se le permiten al componente tener funcional
 
 - useState : Permite crear una variable de estado en el componente. 
     Los estados SOLO PUEDEN CAMBIAR ejecutando la funcion que viene en el hook
-- useEffect :
+- useEffect : Permite llevar a cabo efectos secundarios en componentes funcionales
+   (De forma similar a componentDidMount y componentDidUpdate)
 - useContext :
 
 (otros que no vamos a usar)
@@ -108,7 +113,7 @@ HOOKS (Ganchos) : Son funciones que se le permiten al componente tener funcional
 
 
 
-
+const newArr = arr.map((elemento,indice)=>{})
 
 
 
@@ -118,3 +123,21 @@ https://ant.design/docs/react/introduce
 material-icon
 
 css battle
+
+
+XMLHttpRequest (XHR): API WEB para pedir/enviar inf de un servidor
+AJAX: Async Javascript And XML
+FETCH: API WEB para pedir/enviar inf de un servidor
+AXIOS: Es una libreria moderna que implementa ajax
+API REST: JSON Respresentation State Transfer
+
+
+
+react-router-dom
+
+HOOKS
+BrowserRouter: Router que se usa en el nav con la API History
+HashRouter: Router que se usa en el nav con la API Location
+MemoryRouter: Router que guarda la nav en memoria
+StaticRouter: Router que se usa en el servidor ()
+     :

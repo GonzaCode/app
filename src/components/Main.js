@@ -1,24 +1,19 @@
-import { useState } from "react"
 import ItemCount from "./ItemCount.js"
+import ItemDetailContainer from "./ItemDetailContainer.js"
 import ItemListContainer from "./ItemListContainer.js"
+import { Routes, Route } from "react-router-dom"
+import Carrito from "./Carrito.js"
 
 
 const Main = () => {
-   const [loading, setLoading] = useState(true)
-   console.log(loading)
    return (
       <main>
-         <ItemListContainer/>
-         <p>
-            Lorem ipsum dolor, sit amet consectetur 
-            adipisicing elit. Amet explicabo corrupti 
-            id exercitationem dolorem. Optio, beatae 
-            delectus mollitia accusantium illo dolore 
-            nostrum aliquid. Magnam deleniti sunt ea 
-            vel nulla odit!
-         </p>
-         <button onClick={() => setLoading(!loading)}>toggle</button>
-         <ItemCount stock={7} initial={1}/>
+         <Routes>
+            <Route path="/" element={<ItemListContainer/>}/>
+            <Route path="/categoria/:idCategoria" element={<ItemListContainer/>}/>
+            <Route path="/producto/:idProducto" element={<ItemDetailContainer/>}/>
+            <Route path="/carrito" element={<Carrito/>}/>
+         </Routes>
       </main>
    )
 }

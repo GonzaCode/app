@@ -5,6 +5,7 @@ body {
 #root {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 a {
@@ -41,4 +42,57 @@ footer {
 footer p {
     text-align: center;
     font-size: 0.8rem;
+}
+
+
+.main__article {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 2rem;
+    margin: 3rem 8rem;
+}
+
+.main__article_card {
+    cursor: pointer;
+    height: 250px;
+    padding: 0.5rem;
+    box-shadow: 0px 0.2px 3px 0.2px rgba(0, 0, 0, 0.6);
+    transition: ease 0.7s;
+} .main__article_card:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 10px 0.2px;
+}
+.article__card_title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.article__card_img {
+    object-fit: contain;
+    height: 8rem;
+    width: 100%;
+}
+.article__card_price {
+    text-align: center;
+}
+
+
+
+
+.main__article_detail {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    grid-template-rows: 1fr 0.3fr;
+    grid-gap: 2rem;
+    grid-template-areas: 
+    ". ."
+    "a a"; 
+    margin: 3rem 8rem;
+}
+.a { grid-area: a; }
+
+.main__article_detail img {
+    object-fit: contain;
+    height: 400px;
+    width: 400px;
 }
