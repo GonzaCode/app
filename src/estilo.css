@@ -89,7 +89,7 @@ footer p {
     "a a"; 
     margin: 3rem 8rem;
 }
-.a { grid-area: a; }
+.grid_a { grid-area: a; }
 
 .main__article_detail img {
     object-fit: contain;

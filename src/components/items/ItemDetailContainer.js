@@ -30,11 +30,8 @@ const ItemDetailContainer = () => {
       getItem(idProducto)
    },[])
 
-   if (!isLoaded) {
-      return <h2>Cargando producto...</h2>
-   } else {
-      return <ItemDetail item={producto}/>
-   }
+
+   return !isLoaded ? <h2>Cargando producto...</h2> : <ItemDetail item={producto}/>
 }
 
 export default ItemDetailContainer

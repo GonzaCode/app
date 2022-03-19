@@ -1,6 +1,5 @@
-import ItemCount from "./ItemCount.js"
-import ItemDetailContainer from "./ItemDetailContainer.js"
-import ItemListContainer from "./ItemListContainer.js"
+import ItemDetailContainer from "./items/ItemDetailContainer.js"
+import ItemListContainer from "./items/ItemListContainer.js"
 import { Routes, Route } from "react-router-dom"
 import Carrito from "./Carrito.js"
 
