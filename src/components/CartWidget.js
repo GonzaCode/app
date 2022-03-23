@@ -8,7 +8,7 @@ const CartWidget = () => {
     return (
         <>
             <span className="material-icons">shopping_cart</span>
-            <span>{totalProd()}</span>
+            {totalProd() > 0 && <span>{totalProd()}</span>}
         </>
     )
 }

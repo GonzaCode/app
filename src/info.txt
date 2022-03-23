@@ -148,6 +148,7 @@ ENTENDER README
 https://pandao.github.io/editor.md/en.html
 
 
+
 IMPLEMENTACION DE CONTEXTO : 
 1) Crear el contexto con createContext
 2) Sacar el Provider de adentro del contexto
@@ -162,3 +163,11 @@ LEER EL CONTEXTO
 PATRON PROVIDER / CAMBIAR EL CONTEXTO
 8) Crear un componente nuevo que va a usar el contexto
 9) En el retorno usas el Provider con su prop value (que setea el valor del contexto)
+
+
+MEMORIZAR (NO RENDEREAR)
+useMemo : Memoriza una variable interna de un componente si no es funcion
+useCallback : Memoriza una función interna de un componente si es funcion
+se usan igual que useEffect-->(fn,array)<--
+
+memo (HoC) : Memoriza un componente

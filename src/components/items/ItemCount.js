@@ -1,6 +1,8 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
+import { toast } from "react-toastify"
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial, onAdd, reduce}) => {
 
    const [estado, setEstado] = useState(initial)
    const [added, setAdded] = useState(false)
@@ -19,12 +21,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
    const handleAdd = () => {
       onAdd(estado)
       setAdded(true)
+      toast.success(`Has agregado ${estado} cantidades de el producto en pantalla al carrito`)
    }
 
-   const handleDelete = () => {
+   const handleRetry = () => {
       setAdded(false)
    }
-   
+
    if (!added) {
       return (
          <>
@@ -38,7 +41,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
       return (
          <>
             <br/><p>Agregado</p>
-            <button className="article__detail_btn" onClick={handleDelete}>Quitar del Carrito</button>
+            <button className="article__detail_btn" onClick={handleRetry}>Agregar más cantidad</button>
+            <Link to="/carrito"><button>Finalizar compra</button></Link>
          </>
       )
    }

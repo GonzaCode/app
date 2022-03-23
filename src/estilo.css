@@ -96,3 +96,9 @@ footer p {
     height: 400px;
     width: 400px;
 }
+
+
+
+.hide {
+    display: none;
+}

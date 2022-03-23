@@ -13,8 +13,8 @@ const MiProvider = ({children}) => {
 
       if (yaExiste(item.id)) {
          copiaCarrito[copiaCarrito.findIndex((e) => e.id === item.id)].cantidad += cantidad
-         
          console.log(carrito)
+         setCarrito(copiaCarrito)
       } else {
          copiaCarrito.push(objAlCarrito)
          setCarrito(copiaCarrito)
@@ -26,13 +26,31 @@ const MiProvider = ({children}) => {
       return carrito.some((prod) => prod.id === id)
    }
 
+   function borrarProd(evt) {
+      const id = evt.target.getAttribute("data")
+      const filtro = carrito.filter((el) => {
+         return el.id != id
+      })
+      setCarrito(filtro)
+   }
+
+   function limpiarCarrito() {
+      setCarrito([])
+   }
+
    function totalProd() {
-      return carrito.length
+      let cant = 0
+      carrito.forEach((el) => {
+         cant += el.cantidad
+      })
+      return cant
    }
 
    const valorContexto = {
       addItem,
       totalProd,
+      limpiarCarrito,
+      borrarProd,
       carrito
    }
 

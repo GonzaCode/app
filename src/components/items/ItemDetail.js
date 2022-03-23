@@ -17,7 +17,7 @@ const ItemDetail = ({item}) => {
          <div>
             <h2>{item.title}</h2>
             <p>U$D{item.price}</p>
-            <ItemCount initial={1} stock={9} onAdd={onAdd}/>
+            <ItemCount initial={1} stock={9} onAdd={onAdd} reduce={false}/>
          </div>
          <p className="grid_a">{item.description}</p>
       </article>
