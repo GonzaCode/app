@@ -26,8 +26,7 @@ const MiProvider = ({children}) => {
       return carrito.some((prod) => prod.id === id)
    }
 
-   function borrarProd(evt) {
-      const id = evt.target.getAttribute("data")
+   function borrarProd(id) {
       const filtro = carrito.filter((el) => {
          return el.id != id
       })

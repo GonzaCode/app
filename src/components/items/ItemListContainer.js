@@ -2,6 +2,7 @@ import ItemList from "./ItemList"
 import { useState, useEffect } from "react"
 import { toast } from "react-toastify"
 import { useParams } from "react-router-dom"
+//getDocs, getDoc, collection, updateDoc, addDoc, query, where
 
 const arrProd = [ //No lo borro, quiza pueda usarlo al momento de cambiar la API por el uso de Firebase
    {

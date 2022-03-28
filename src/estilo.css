@@ -102,3 +102,13 @@ footer p {
 .hide {
     display: none;
 }
+
+
+
+
+
+
+.carrito__link {
+    color: royalblue;
+    text-decoration: underline;
+}
