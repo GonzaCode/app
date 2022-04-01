@@ -13,12 +13,10 @@ const MiProvider = ({children}) => {
 
       if (yaExiste(item.id)) {
          copiaCarrito[copiaCarrito.findIndex((e) => e.id === item.id)].cantidad += cantidad
-         console.log(carrito)
          setCarrito(copiaCarrito)
       } else {
          copiaCarrito.push(objAlCarrito)
          setCarrito(copiaCarrito)
-         console.log(carrito)
       }
    }
 
@@ -45,11 +43,36 @@ const MiProvider = ({children}) => {
       return cant
    }
 
+   function precioTotal() {
+      let total = 0
+      carrito.forEach((el) => {
+         const pre = el.cantidad * el.precio
+         total += pre
+      })
+      return total
+   }
+
+   function crearBoleta(e) {
+      e.preventDefault()
+      const datos = {
+         comprador: {
+            nombre: document.querySelector("#nombre").value,
+            telefono: document.querySelector("#celular").value,
+            email: document.querySelector("#email").value
+         },
+         items: carrito,
+         total: precioTotal()
+      }
+      console.log(datos)
+   }
+
    const valorContexto = {
       addItem,
       totalProd,
       limpiarCarrito,
       borrarProd,
+      precioTotal,
+      crearBoleta,
       carrito
    }
 

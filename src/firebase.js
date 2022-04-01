@@ -6,7 +6,7 @@ import { initializeApp } from "firebase/app";
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { getFirestore } from "firebase/firestone"
+import { getFirestore, collection } from "firebase/firestore"
 
 // Your web app's Firebase configuration
 
@@ -30,4 +30,5 @@ const firebaseConfig = {
 // Initialize Firebase
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app)
+const db = getFirestore(app)
+export const productosCollection = collection(db, "productos")

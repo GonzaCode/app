@@ -4,10 +4,9 @@ import { NavLink } from "react-router-dom"
 function Nav() {
   return (
     <nav>
-        <NavLink to="/categoria/hombres">HOMBRE</NavLink>
-        <NavLink to="/categoria/mujeres">MUJER</NavLink>
-        <NavLink to="/categoria/joyas">JOYAS</NavLink>
-        <NavLink to="/categoria/electronicos">ELECTRONICOS</NavLink>
+        <NavLink to="/categoria/Cuerdas">CUERDAS</NavLink>
+        <NavLink to="/categoria/Pianos">PIANOS</NavLink>
+        <NavLink to="/categoria/Vientos">VIENTOS</NavLink>
         <NavLink to="/carrito"><CartWidget/></NavLink>
     </nav>
   )

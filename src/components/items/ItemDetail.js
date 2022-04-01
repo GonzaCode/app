@@ -13,13 +13,13 @@ const ItemDetail = ({item}) => {
 
    return (
       <article className="main__article_detail">
-         <img src={item.image}/>
+         <img src={item.imagen}/>
          <div>
-            <h2>{item.title}</h2>
-            <p>U$D{item.price}</p>
+            <h2>{item.nombre}</h2>
+            <p>U$D{item.precio}</p>
             <ItemCount initial={1} stock={9} onAdd={onAdd} reduce={false}/>
          </div>
-         <p className="grid_a">{item.description}</p>
+         <p className="grid_a">{item.nombre}</p>
       </article>
    )
 }

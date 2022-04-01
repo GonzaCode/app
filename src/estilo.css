@@ -112,3 +112,34 @@ footer p {
     color: royalblue;
     text-decoration: underline;
 }
+
+
+
+
+.main__article_checkout {
+    text-align: center;
+    background-color: rgb(236, 251, 99);
+    padding: 1rem 2rem 2rem;
+    margin: 2rem 15rem;
+    border-radius: 1rem;
+}
+
+.checkout__form > div {
+    margin: 2rem;
+}
+.checkout__form > div > label {
+    display: block;
+    margin: 0.5rem;
+}
+.checkout__form > div > input {
+    padding: 0.5rem;
+    border: none;
+    outline: 1px black solid;
+    border-bottom: 2px solid black;
+}
+.checkout__form > button {
+    margin-top: 1rem;
+    padding: 0.7rem;
+    background-color: rgba(250, 253, 66, 0.728);
+    border: 1px solid black;
+}
