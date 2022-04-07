@@ -13,7 +13,6 @@ const ItemDetailContainer = () => {
    useEffect(() => {
       
       const pedido = getDoc(doc(productosCollection,idProducto))
-      console.log(pedido)
 
       pedido
          .then(res => setProducto({ id: res.id, ...res.data() }))

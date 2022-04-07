@@ -1,4 +1,7 @@
+import { collection, serverTimestamp, addDoc, getDoc, doc } from "firebase/firestore";
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
+import { db } from "../firebase";
 
 export const contexto = createContext()
 const {Provider} = contexto
@@ -6,6 +9,7 @@ const {Provider} = contexto
 const MiProvider = ({children}) => {
 
    const [carrito, setCarrito] = useState([])
+   const [pedidoSeguido, setPedidoSeguido] = useState({})
 
    function addItem(item, cantidad) {
       const copiaCarrito = [...carrito]
@@ -54,16 +58,33 @@ const MiProvider = ({children}) => {
 
    function crearBoleta(e) {
       e.preventDefault()
-      const datos = {
+      const orden = {
          comprador: {
             nombre: document.querySelector("#nombre").value,
             telefono: document.querySelector("#celular").value,
             email: document.querySelector("#email").value
          },
          items: carrito,
-         total: precioTotal()
+         total: precioTotal(),
+         fecha: serverTimestamp()
       }
-      console.log(datos)
+      const coleccion = collection(db, "ordenes")
+      const pedido = addDoc(coleccion, orden)
+      pedido
+         .then(res => {
+            toast.success("¡Compra finalizada con exito! Id de seguimiento: " + res.id)
+         })
+         .catch(err => {toast.error("Error al realizar la compra: " + err)})
+   }
+
+   function identPedido(id) {
+      const coleccion = collection(db, "ordenes")
+      const pedido = getDoc(doc(coleccion, id))
+
+      console.log(id)
+      pedido
+         .then((res) => setPedidoSeguido(res.data()))
+         .catch(() => toast.error("Error al obtener pedido"))
    }
 
    const valorContexto = {
@@ -73,6 +94,8 @@ const MiProvider = ({children}) => {
       borrarProd,
       precioTotal,
       crearBoleta,
+      identPedido,
+      pedidoSeguido,
       carrito
    }
 

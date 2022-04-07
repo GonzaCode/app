@@ -116,7 +116,7 @@ footer p {
 
 
 
-.main__article_checkout {
+.main__article_checkout, .main__article_seguimiento {
     text-align: center;
     background-color: rgb(236, 251, 99);
     padding: 1rem 2rem 2rem;
@@ -124,20 +124,20 @@ footer p {
     border-radius: 1rem;
 }
 
-.checkout__form > div {
+.checkout__form > div, .seguimiento__form > div {
     margin: 2rem;
 }
-.checkout__form > div > label {
+.checkout__form > div > label, .seguimiento__form > div > label {
     display: block;
     margin: 0.5rem;
 }
-.checkout__form > div > input {
+.checkout__form > div > input, .seguimiento__form > div > input {
     padding: 0.5rem;
     border: none;
     outline: 1px black solid;
     border-bottom: 2px solid black;
 }
-.checkout__form > button {
+.checkout__form > button, .seguimiento__form > button {
     margin-top: 1rem;
     padding: 0.7rem;
     background-color: rgba(250, 253, 66, 0.728);

@@ -10,15 +10,15 @@ const Checkout = () => {
          <h2>Información de Contacto</h2>
          <form className="checkout__form">
             <div>
-               <label for="nombre">Nombre</label>
+               <label htmlFor="nombre">Nombre:</label>
                <input type="text" id="nombre" required={true} placeholder="Nombre completo"></input>
             </div>
             <div>
-               <label for="celular">Cel./Tel.</label>
+               <label htmlFor="celular">Cel./Tel.:</label>
                <input type="text" id="celular" required={true} placeholder="Número de contacto"></input>
             </div>
             <div>
-               <label for="email">E-mail</label>
+               <label htmlFor="email">E-mail:</label>
                <input type="email" id="email" required={true} placeholder="Dirección de correo electronico"></input>
             </div>
             <button onClick={crearBoleta}>Finalizar Compra</button>
