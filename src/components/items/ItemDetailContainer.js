@@ -3,12 +3,24 @@ import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
 import { productosCollection } from "../../firebase.js"
 import { getDoc, doc } from "firebase/firestore"
+import Lottie from "lottie-react"
+import lottie from "../../lottie.json";
 
 const ItemDetailContainer = () => {
 
    const [producto, setProducto] = useState([])
    const [isLoaded, setIsLoaded] = useState(false)
    const {idProducto} = useParams()
+
+   const options = {
+      animationData: lottie,
+      autoplay: true,
+      loop: false,
+      style: {
+         width: "25%",
+         margin: "auto"
+      }
+   }
 
    useEffect(() => {
       
@@ -21,7 +33,7 @@ const ItemDetailContainer = () => {
    },[])
 
 
-   return !isLoaded ? <h2>Cargando producto...</h2> : <ItemDetail item={producto}/>
+   return !isLoaded ? <Lottie {...options}/> : <ItemDetail item={producto}/>
 }
 
 export default ItemDetailContainer

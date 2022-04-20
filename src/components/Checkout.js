@@ -3,12 +3,12 @@ import {contexto} from "../context/cartContext.js"
 
 const Checkout = () => {
 
-   const {crearBoleta} = useContext(contexto)
+   const { crearBoleta, idBoleta } = useContext(contexto)
 
    return (
       <article className="main__article_checkout">
          <h2>Información de Contacto</h2>
-         <form className="checkout__form">
+         <form onSubmit={crearBoleta} className="checkout__form">
             <div>
                <label htmlFor="nombre">Nombre:</label>
                <input type="text" id="nombre" required={true} placeholder="Nombre completo"></input>
@@ -21,8 +21,9 @@ const Checkout = () => {
                <label htmlFor="email">E-mail:</label>
                <input type="email" id="email" required={true} placeholder="Dirección de correo electronico"></input>
             </div>
-            <button onClick={crearBoleta}>Finalizar Compra</button>
-         </form>
+            <button className="btn css-button-sliding-to-left--green">Finalizar Compra</button>
+         </form> 
+         {idBoleta && <p>ID de su ultima compra: {idBoleta}</p>}
       </article>
    )
 }

@@ -1,3 +1,4 @@
+import { memo } from "react"
 import Item from "./Item.js"
 
 const ItemList = ({items}) => {
@@ -9,4 +10,4 @@ const ItemList = ({items}) => {
    )
 }
 
-export default ItemList
+export default memo(ItemList)

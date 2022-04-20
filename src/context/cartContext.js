@@ -9,6 +9,7 @@ const {Provider} = contexto
 const MiProvider = ({children}) => {
 
    const [carrito, setCarrito] = useState([])
+   const [idBoleta, setIdBoleta] = useState("")
    const [pedidoSeguido, setPedidoSeguido] = useState({})
 
    function addItem(item, cantidad) {
@@ -57,34 +58,46 @@ const MiProvider = ({children}) => {
    }
 
    function crearBoleta(e) {
-      e.preventDefault()
-      const orden = {
-         comprador: {
-            nombre: document.querySelector("#nombre").value,
-            telefono: document.querySelector("#celular").value,
-            email: document.querySelector("#email").value
-         },
-         items: carrito,
-         total: precioTotal(),
-         fecha: serverTimestamp()
+      if (carrito.length < 1) {
+         e.preventDefault()
+         toast.dismiss()
+         toast.error("No tienes productos en el Carrito")
+      } else {
+         e.preventDefault()
+         const orden = {
+            comprador: {
+               nombre: document.querySelector("#nombre").value,
+               telefono: document.querySelector("#celular").value,
+               email: document.querySelector("#email").value
+            },
+            items: carrito,
+            total: precioTotal(),
+            fecha: serverTimestamp()
+         }
+         const coleccion = collection(db, "ordenes")
+         const pedido = addDoc(coleccion, orden)
+         pedido
+            .then(res => {
+               toast.success("¡Compra finalizada con exito! Id de seguimiento: " + res.id)
+               setIdBoleta(res.id)
+               setCarrito([])
+            })
+            .catch(err => {toast.error("Error al realizar la compra: " + err)})
       }
-      const coleccion = collection(db, "ordenes")
-      const pedido = addDoc(coleccion, orden)
-      pedido
-         .then(res => {
-            toast.success("¡Compra finalizada con exito! Id de seguimiento: " + res.id)
-         })
-         .catch(err => {toast.error("Error al realizar la compra: " + err)})
    }
 
    function identPedido(id) {
+
       const coleccion = collection(db, "ordenes")
       const pedido = getDoc(doc(coleccion, id))
 
-      console.log(id)
       pedido
-         .then((res) => setPedidoSeguido(res.data()))
-         .catch(() => toast.error("Error al obtener pedido"))
+         .then((res) => {
+            setPedidoSeguido(res.data())
+         })
+         .catch(() => {
+            toast.error("Error al obtener pedido")
+         })
    }
 
    const valorContexto = {
@@ -94,8 +107,10 @@ const MiProvider = ({children}) => {
       borrarProd,
       precioTotal,
       crearBoleta,
+      idBoleta,
       identPedido,
       pedidoSeguido,
+      yaExiste,
       carrito
    }
 

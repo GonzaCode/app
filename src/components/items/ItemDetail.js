@@ -7,13 +7,12 @@ const ItemDetail = ({item}) => {
    const {addItem} = useContext(contexto)
 
    const onAdd = (cantidad) => {
-      console.log("Items agregados: ",cantidad)
       addItem(item, cantidad)
    }
 
    return (
       <article className="main__article_detail">
-         <img src={item.imagen}/>
+         <img src={`.${item.imagen}`}/>
          <div>
             <h2>{item.nombre}</h2>
             <p>U$D{item.precio}</p>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Footer = () => {
   return (
     <footer className="footer_layout">
-        <Link to="/seguimiento"><p className="footer_seguimiento">Seguir mi pedido.</p></Link>
+        <Link to="/seguimiento"><p className="link">Seguir mi pedido.</p></Link>
         <p>Copyright 2022 - Gonzalo M.</p>
         <p>Todos los derechos reservados.</p>
     </footer>
