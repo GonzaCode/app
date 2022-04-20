@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e66385f8-7903-4bb6-8368-b9ef74c04f88/deploy-status)](https://app.netlify.com/sites/coruscating-douhua-de1f66/deploys)
+
 # ¡Hola!
 
 Me llamo Gonzalo, actualmente considérome un aficionado a la programación, por lo cual no dejo de seguir aprendiendo a mi ritmo sobre este mundo. Este es un proyecto que hice como trabajo final conforme lo aprendido en el curso de **React.js** (en coderhouse). 
